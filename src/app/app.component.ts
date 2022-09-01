@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Clipboard } from "@angular/cdk/clipboard";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'test';
+
+  constructor(private clipboard: Clipboard) { }
+
+  copyToClipboard(str: string) {
+    this.clipboard.copy(str);
+  }
 }
